@@ -2,9 +2,7 @@
 name = "final-product"
 version = "0.1.0"
 description = "This is my Python project."
-authors = [
-    { name = "Arda Can Aras", email = "ardaaras99@gmail.com" },
-]
+authors = [{ name = "Arda Can Aras", email = "ardaaras99@gmail.com" }]
 requires-python = ">=3.10,<3.13"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -22,12 +20,12 @@ dependencies = [
 [dependency-groups]
 dev = [
 
-"ipykernel>=6.29.5",
+    "ipykernel>=6.29.5",
     "ipython>=8.34.0",
     "ipywidgets>=8.1.5",
     "jupyter>=1.1.1",
-"mypy>=1.15.0",
-"pytest-cov>=6.0.0",
+    "mypy>=1.15.0",
+    "pytest-cov>=6.0.0",
     "pytest>=8.3.5",
     "commitizen>=4.4.1",
     "pep8-naming>=0.14.1",
@@ -80,5 +78,5 @@ major_version_zero = true
 update_changelog_on_bump = true
 
 [tool.uv.sources]
-janus-graph-connector = { git = "https://github.com/ardaaras99/janus-graph-connector.git" }
 dynamic-kg-extractor = { git = "https://github.com/ardaaras99/dynamic-kg-extractor.git" }
+janus-graph-connector = { git = "https://github.com/ardaaras99/janus-graph-connector.git" }

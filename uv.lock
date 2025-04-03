@@ -744,7 +744,7 @@ wheels = [
 [[package]]
 name = "dynamic-kg-extractor"
 version = "0.1.0"
-source = { git = "https://github.com/ardaaras99/dynamic-kg-extractor.git#415bf3b6f46e2dc4fc6ee282e73d00abaf7a5a17" }
+source = { git = "https://github.com/ardaaras99/dynamic-kg-extractor.git#fbaa193c0b55263c5f6d703b6770dd9621c9fb2f" }
 dependencies = [
     { name = "base-ontology" },
     { name = "ipython", version = "8.34.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
