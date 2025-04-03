@@ -28,8 +28,8 @@ test_client.cleanup_graph(ontology_name=ontology_name, version=version)
 test_client.write_nodes(json_file_path=node_path, ontology_name=ontology_name, version=version)
 test_client.write_relations(json_file_path=relation_path, ontology_name=ontology_name, version=version)
 # 2. Finally read the graph
-READED_NODE_DICT = test_client.read_nodes(ontology_name=ontology_name, version=version)
-READED_RELATION_DICT = test_client.read_relations(ontology_name=ontology_name, version=version, node_dict=NODE_DICT)
+readed_node_dict = test_client.read_nodes(ontology_name=ontology_name, version=version)
+readed_relation_dict = test_client.read_relations(ontology_name=ontology_name, version=version, node_dict=readed_node_dict)
 
 # ------------------------------------------------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------
@@ -38,11 +38,11 @@ READED_RELATION_DICT = test_client.read_relations(ontology_name=ontology_name, v
 #! 1. Extrac Nodes from pdf with the given READED_NODE_DICT
 pdf_file_path = Path("path/to/your/pdf_file.pdf")
 
-node_extractor = NodeExtractor(config=NodeExtractorConfig(file_path=pdf_file_path, node_dict=READED_NODE_DICT, llm_model_name=LLMOptions.OPENAI_O3_MINI))
+node_extractor = NodeExtractor(config=NodeExtractorConfig(file_path=pdf_file_path, node_dict=readed_node_dict, llm_model_name=LLMOptions.OPENAI_O3_MINI))
 extracted_nodes = node_extractor.pipeline()
 
 #! 2. Pass the extracted nodes to relation extractor
-relation_extractor = RelationExtractor(config=RelationExtractorConfig(relation_dict=READED_RELATION_DICT, llm_model_name=LLMOptions.OPENAI_O3_MINI))
+relation_extractor = RelationExtractor(config=RelationExtractorConfig(relation_dict=readed_relation_dict, llm_model_name=LLMOptions.OPENAI_O3_MINI))
 extracted_relations = relation_extractor.pipeline(extracted_nodes=extracted_nodes)
 
 #! 3. Visualize the extracted nodes and relations
